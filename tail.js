@@ -25,10 +25,12 @@ const assertEqual = function(actual, expected) {
   console.log(`${emoji} Assertion ${check}: ${quoteMark1}${actual}${quoteMark1} ${checkBoolean} ${quoteMark2 + expected + quoteMark2}`);
 };
 
-let head = function(array) {
-  if (array.length === 0) {
-    return undefined;
-  }
-  return array[0];
+let tail = function(array) {
+  let output;
+  (array && array.length) ?  output = array.slice(1) : undefined;
+  return output;
 };
-assertEqual(head([1]), 1);
+const result = tail(["Hello", "Lighthouse", "Labs"]);
+assertEqual(result.length, 2); // ensure we get back two elements
+assertEqual(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
+assertEqual(result[1], "Labs"); // ensure second element is "Labs"
