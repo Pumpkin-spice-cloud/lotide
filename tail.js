@@ -27,7 +27,7 @@ const assertEqual = function(actual, expected) {
 
 let tail = function(array) {
   let output;
-  (array && array.length) ?  output = array.slice(1) : undefined;
+  output = (array && array.length) ?  array.slice(1) : [];
   return output;
 };
 const result = tail(["Hello", "Lighthouse", "Labs"]);
