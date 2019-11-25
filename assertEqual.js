@@ -27,7 +27,7 @@ const assertEqual = function(actual, expected) {
  
   }
   
-  console.log(emoji + ' Assertion ' + check + ': ' + quoteMark1 + actual + quoteMark1 + ' ' + checkBoolean + ' ' + quoteMark2 + expected + quoteMark2);
+  console.log(`${emoji} Assertion ${check}: ${quoteMark1}${actual}${quoteMark1} ${checkBoolean} ${quoteMark2 + expected + quoteMark2}`);
 };
 
 // TEST CODE
