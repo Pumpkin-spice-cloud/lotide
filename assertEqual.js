@@ -1,9 +1,5 @@
 const assertEqual = function(actual, expected) {
-  let check;
-  let checkBoolean;
-  let quoteMark1;
-  let quoteMark2;
-  let emoji;
+  let check, checkBoolean, quoteMark1, quoteMark2, emoji;
   if (typeof actual === 'string') {
     quoteMark1 = '"';
   } else {
