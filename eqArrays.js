@@ -1,40 +1,33 @@
 const assertEqual = function(actual, expected) {
-  let check, checkBoolean, quoteMark1, quoteMark2, emoji;
-  if (typeof actual === 'string') {
-    quoteMark1 = '"';
-  } else {
-    quoteMark1 = '';
-  }
-  if (typeof expected === 'string') {
-    quoteMark2 = '"';
-  } else {
-    quoteMark2 = '';
-  }
-
-  if (actual === expected) {
+  let check, checkBoolean,  emoji;
+    if (actual === expected) {
     check = 'Passed';
-    checkBoolean = '===';
     emoji = '✅✅✅';
    
   } else {
     check = 'Failed';
-    checkBoolean = '!==';
     emoji = '⛔️⛔️⛔️';
  
   }
-  
-  console.log(`${emoji} Assertion ${check}: ${quoteMark1}${actual}${quoteMark1} ${checkBoolean} ${quoteMark2 + expected + quoteMark2}`);
-};
+   (actual === true) ? checkBoolean = '===' : checkBoolean = '!==';
 
+  
+  
+  console.log(`${emoji} Assertion ${check}: [${input1}] ${checkBoolean} [${input2}]`);
+}
+let input1, input2 //I know global variables bad :/ but i don't want the return to be an array containing the input array
 let eqArrays =function (array1, array2){
   let equiv = true;
+  input1 = array1;
+  input2 = array2;
   let longestLength = Math.max(array1.length, array2.length);
   for(let i = 0; i < longestLength; i++){
     if(array1[i] !== array2[i]){
       equiv = false;
     }
   }
+  
   return equiv;
 }
 
-console.log(assertEqual(eqArrays(['1','3'], ['1','3']), true));
+assertEqual(eqArrays(['1','3'], ['1','3']), true);
