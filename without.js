@@ -26,20 +26,20 @@ const assertArrayEqual = function(array1, array2) {
   console.log(`${emoji} Assertion ${check}: [${array1}] ${checkBoolean} [${array2}]`);
 };
 
-let without = function(source, itemsToRemove){
+let without = function(source, itemsToRemove) {
   let removeIndex;
   let i = -1;
-  while(i < itemsToRemove.length) {
-    while(source.indexOf(itemsToRemove[i]) > -1){
-    removeIndex = source.indexOf(itemsToRemove[i]);
-    source.splice(removeIndex, 1);
-  }
-  i++
+  while (i < itemsToRemove.length) {
+    while (source.indexOf(itemsToRemove[i]) > -1) {
+      removeIndex = source.indexOf(itemsToRemove[i]);
+      source.splice(removeIndex, 1);
+    }
+    i++;
     
    
   }
   return source;
-}
+};
 assertArrayEqual(without([1,2,3,4,3,2,1], [1, 2]), [3, 4, 3]);
 assertArrayEqual(without(['hello', 'bye', 'ciao', 'ciao'], ['hello', 'ciao']), ['bye']);
 assertArrayEqual(without([], []), []);

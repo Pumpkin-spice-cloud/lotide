@@ -26,22 +26,22 @@ const assertArrayEqual = function(array1, array2) {
   console.log(`${emoji} Assertion ${check}: [${array1}] ${checkBoolean} [${array2}]`);
 };
 
-let middle = function(array) {
-  let length = array.length;
-  let middleIndex = [];
-  let output = [];
-  if (length < 3) {
-    return [];
+let flatten = function(input) {
+  let expandArray = [];
+  for (let i = 0; i < input.length; i++) {
+    if (Array.isArray(input[i])) {
+      expandArray = input[i];
+      for (let j = expandArray.length - 1; j >= 0; j--) {
+        input.splice(i, 0, expandArray[j]);
+      }
+      input.splice(i + expandArray.length, 1);
+    }
   }
-  middleIndex[0] = Math.floor(length / 2);
-  if (length % 2 === 0) {
-    middleIndex.unshift(middleIndex[0] - 1);
-  }
-  for (let i = 0; i < middleIndex.length; i++) {
-    output.push(array[middleIndex[i]]);
-  }
-  return output;
-
+  return input;
 };
+assertArrayEqual(flatten([1,2,3,[1,2,3]]), [1,2,3,1,2,3]);
+assertArrayEqual(flatten([]), []);
+assertArrayEqual(flatten(['a','b','c']), ['a','b','c']);
+assertArrayEqual(flatten([1,2,3,[1,2,3],4,[5,'c']]), [1,2,3,1,2,3,4,5,'c']);
 
-assertArrayEqual(middle([1]), []);
+
