@@ -28,15 +28,13 @@ const assertEqual = function(actual, expected) {
 
 let countLetters = function(inputString) {
   let output = {};
-  for (let i = 0; i < inputString.length; i++){
-    if (inputString[i] === ' '){
-    }
-    else if (output.hasOwnProperty(inputString[i])){
+  for (let i = 0; i < inputString.length; i++) {
+    if (inputString[i] === ' ') {
+    } else if (output.hasOwnProperty(inputString[i])) {
       output[inputString[i]] += 1;
+    } else {
+      output[inputString[i]] = 1;
     }
-    else {
-    output[inputString[i]] = 1;
-    }  
   
 
   
@@ -44,6 +42,6 @@ let countLetters = function(inputString) {
   
   }
   return output;
-}
+};
 
 assertEqual(countLetters('abc defgabc')['f'], 1);

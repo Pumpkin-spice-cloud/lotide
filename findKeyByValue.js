@@ -26,20 +26,20 @@ const assertEqual = function(actual, expected) {
   console.log(`${emoji} Assertion ${check}: ${quoteMark1}${actual}${quoteMark1} ${checkBoolean} ${quoteMark2 + expected + quoteMark2}`);
 };
 
-let findKeyByValue = function (showList, tvShow){
-  for (let show in showList){
+let findKeyByValue = function(showList, tvShow) {
+  for (let show in showList) {
     console.log(showList[show]);
-    if (showList[show] === tvShow){
+    if (showList[show] === tvShow) {
       
       return show;
     }
   }
   return undefined;
-} 
+};
 
 
 
-const bestTVShowsByGenre = { 
+const bestTVShowsByGenre = {
   sci_fi: "The Expanse",
   comedy: "Brooklyn Nine-Nine",
   drama:  "The Wire"
