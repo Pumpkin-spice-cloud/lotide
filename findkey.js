@@ -29,13 +29,16 @@ const assertEqual = function(actual, expected) {
 
 
 let findkey = function(object, callback) {
-  let shell = Object.keys(object);
-  for (let i = 0; i < shell.length; i++) {
-
-    if (callback((object[shell[i]].stars))) {
-      return shell[i];
+  let outerShell = Object.keys(object);
+  for (let i = 0; i < outerShell.length; i++) {
+    let innerShell = Object.keys(object[outerShell[i]]);
+    for (let element of innerShell) {
+      if (callback((object[outerShell[i]][element]))) {
+        return outerShell[i];
+      }
     }
   }
+  return undefined;
 };
 
 let testObject = {
