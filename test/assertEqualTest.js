@@ -1,5 +1,10 @@
 // TEST CODE
 const assertEqual = require('../assertEqual.js')
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual('hi', 'hi');
-assertEqual(1, 1);
+const assert = require('chai').assert;
+
+describe("#assertEqual", () => {
+  it("returns true for assertEqual('hi', 'hi')", () => {
+    assert.strictEqual(assertEqual('hi', 'hi'), true);
+  });
+
+});
