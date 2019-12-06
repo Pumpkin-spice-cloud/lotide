@@ -40,10 +40,10 @@ const assertArrayEqual = function(array1, array2) {
   console.log(`${emoji} Assertion ${check}: [${array1}] ${checkBoolean} [${array2}]`);
 };
 
-function takeUntil (data, callBack){
-  let index, output;
+function takeUntil(data, callBack) {
+  let index;
   let notPassed = data.find(element => callBack(element));
-  if (notPassed !== undefined){
+  if (notPassed !== undefined) {
     index = data.indexOf(notPassed);
   }
   return data.splice(0, index);
@@ -58,3 +58,4 @@ const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Re
 const results2 = takeUntil(data2, x => x === ',');
 assertArrayEqual(results2, ['I\'ve', 'been', 'to', 'Hollywood']);
 
+module.exports = takeUntil;

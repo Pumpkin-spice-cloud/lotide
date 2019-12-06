@@ -1,4 +1,4 @@
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
   let check, checkBoolean, quoteMark1, quoteMark2, emoji, output;
   if (typeof actual === 'string') {
     quoteMark1 = '"';

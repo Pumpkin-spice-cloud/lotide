@@ -53,3 +53,4 @@ let testObject = {
 
 
 assertEqual((findkey(testObject, x => x === 2)), 'noma');
+module.exports =  findkey;

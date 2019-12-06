@@ -4,14 +4,14 @@ const nums2 = [123, 456, 789];
 
 
 const map = function(array, callback) {
-  const results = []
+  const results = [];
   for (let item of array) {
     results.push(callback(item));
   }
 
   
-  return results
-}
+  return results;
+};
 
 
 
@@ -59,3 +59,5 @@ assertArrayEqual(results1, ['g', 'c', 't', 'm', 't']);
 
 const results2 = map(nums2, num => num + 1);
 assertArrayEqual(results2, [124,457,790]);
+
+module.exports = map;

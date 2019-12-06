@@ -1,5 +1,5 @@
 // TEST CODE
-const assertEqual = require('../assertEqual.js')
+const assertEqual = require('../assertEqual.js');
 const assert = require('chai').assert;
 
 describe("#assertEqual", () => {

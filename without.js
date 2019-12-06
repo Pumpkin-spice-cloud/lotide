@@ -43,3 +43,5 @@ let without = function(source, itemsToRemove) {
 assertArrayEqual(without([1,2,3,4,3,2,1], [1, 2]), [3, 4, 3]);
 assertArrayEqual(without(['hello', 'bye', 'ciao', 'ciao'], ['hello', 'ciao']), ['bye']);
 assertArrayEqual(without([], []), []);
+
+module.exports = without;

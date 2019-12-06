@@ -19,16 +19,9 @@ let eqArrays = function(array1, array2) {
   let equiv = true;
   input1 = array1;
   input2 = array2;
-  if (Array.isArray(array1) === false || Array.isArray(array2) === false) {
-    equiv = false;
-    return equiv;
-  }
   let longestLength = Math.max(array1.length, array2.length);
-  
   for (let i = 0; i < longestLength; i++) {
-    
     if (array1[i] !== array2[i]) {
-      
       equiv = false;
     }
   }
@@ -36,14 +29,12 @@ let eqArrays = function(array1, array2) {
   return equiv;
 };
 
+
 const eqObjects = function(object1, object2) {
-  if (eqArrays(Object.keys(object1), Object.keys(object2))) {
+  if (Object.keys(object1).length === Object.keys(object2).length) {
     for (let key in object1) {
-      if (Array.isArray(object1[key])) {
-        if (eqArrays(object1[key], object2[key]) === false) {
-          return false;
-        }
-      } else if (object1[key] !== object2[key]) {
+      
+      if (object1[key] !== object2[key]) { //not sure why .key dnw but [key] works
         return false;
         
       }
@@ -54,9 +45,5 @@ const eqObjects = function(object1, object2) {
   return true;
 
 };
-console.log(eqObjects({a: [5, 3], b: 4}, {a: [5, 3], b: 4}));
-console.log(eqObjects({a: [5, 3], b: 4}, {a: 5, b: 4}));
+console.log(eqObjects({a: 5, b: 4}, {a: 5, b: 3}));
 
-console.log(eqArrays([5,3],5));
-
-module.exports = eqObjects;

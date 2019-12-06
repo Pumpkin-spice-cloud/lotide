@@ -45,3 +45,4 @@ assertArrayEqual(flatten(['a','b','c']), ['a','b','c']);
 assertArrayEqual(flatten([1,2,3,[1,2,3],4,[5,'c']]), [1,2,3,1,2,3,4,5,'c']);
 
 
+module.exports = flatten;

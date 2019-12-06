@@ -1,5 +1,5 @@
 
-let middle = function (array) {
+let middle = function(array) {
   let length = array.length;
   let middleIndex = [];
   let output = [];
